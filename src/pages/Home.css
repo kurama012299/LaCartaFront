@@ -9,30 +9,6 @@
     min-height: 490px;
     height: 700px;
 }
-.header{
-    width: 1250px;
-    height: 30px;
-    border-bottom: 1px ridge rgb(248, 243, 238);
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    display: flex;
-    justify-content: flex-end;
-    padding: 16px;
-    gap: 8px;
-    text-align: center;
-    background-color: white;
-}
-.button{
-    background-color: rgb(255, 102, 0) !important;
-    float: right;
-    position: relative;
-    right: 10px;
-    margin-left: 10px;
-    color: white !important;
-    font-weight: 400 !important;
-    border-radius: 10px;
-}
 .buttonStart{
     background-color: rgb(255, 102, 0) !important;
     position: relative;
@@ -86,25 +62,6 @@
     border-radius: 10px;
 
 }
-.buttonHover:hover{
-    color: white !important;
-    background-color: rgb(255, 102, 0) !important;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-weight: 600 !important;
-}
-.labelHeader{
-    color:rgb(83, 83, 83);
-    cursor: pointer;
-    transition: all 0.3s ease !important;
-}
-.labelMenu{
-    width: fit-content !important;
-    cursor: pointer;
-}
-.labelHeader:hover{
-    color: black !important;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
 .labelCenter{
     font-size: 4rem;
     font-weight: 700;
@@ -143,14 +100,15 @@
     width: 360px;
     height: 220px;
     position: relative;
-    border-style: groove;
-    border-color: rgb(255, 248, 243);
     top: 40px;
-    border-radius: 20px;
     margin-right: 15px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    background-color: white;
     align-items: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+
 }
 .bigBox{
     display: flex;

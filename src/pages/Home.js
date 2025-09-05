@@ -4,27 +4,22 @@ import { Button } from 'antd';
 import { RiRestaurantLine } from "react-icons/ri";
 import { FiUsers } from "react-icons/fi";
 import { HiOutlineQrcode } from "react-icons/hi";
+import {Link} from "react-router-dom";
+import Header from "../components/Header";
 
 const Home = ()=> {
     return (
         <body>
             <section className="body">
-            <div className="header">
-                <div style={{position:'absolute',right:'85%',top:'1%',display:'flex',gap:'8px',alignItems:'center'}}>
-                    <RiRestaurantLine className="iconRestaurant"></RiRestaurantLine>
-                    <h3 className="labelMenu">MenúDigital</h3>
-                </div>
-            <div style={{position:'absolute',left:'50%',top:'1%',transform:'translateX(-50%)'}}>
-                <h4 className="labelHeader">Descubrir</h4>
-            </div>
-            <Button type="primary" className="buttonHover">Iniciar sesión</Button>
-            <Button type="primary" className="button">Registrarse</Button>
-        </div>  
+            <Header/>
         <h1 className="labelCenter">Menús Digitales para el Futuro de la Gastronomía</h1>
         <p className="labelSub"> Descubre restaurantes increíbles y explora sus menús digitales.Para restaurantes: digitaliza tu carta gratis y actualízala en tiempo real
               </p>
         <Button type="primary" icon={<RiRestaurantLine/>}className="buttonRestaurant">Explorar restaurantes</Button>
-        <Button type="primary" icon={<FiUsers/>} className="buttonToRestaurant">Para restaurantes</Button>
+        <Link to="/restaurants" style={{ textDecoration: 'none' }}>
+            <Button type="primary" icon={<FiUsers/>} className="buttonToRestaurant">Para restaurantes</Button>
+        </Link>
+        
         </section>
         <section className="sectionMiddle">
             <h2 style={{fontWeight:'700',marginTop:'60px',fontSize:'2rem',marginBottom:'30px'}}>¿Cómo funciona?</h2>

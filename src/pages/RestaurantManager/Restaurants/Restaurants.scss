@@ -1,0 +1,97 @@
+$color-fondo-body:  rgb(255, 251, 248);
+$color-letra-sub:rgb(96, 96, 96); 
+$color-principal:rgb(255, 102, 0);
+
+.body{
+    background-color:$color-fondo-body;
+    height: 1000px;
+}
+
+.labelTop{
+    position: relative;
+    right: 250px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+@mixin label-sub($right: 300px,$margin-bottom: 3rem){
+    font-size: large;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    font-style: oblique;
+    font-weight: 400;
+    margin-bottom: $margin-bottom;
+    color: $color-letra-sub; 
+    position: relative;
+    right: $right;
+}
+.labelSub{
+   @include label-sub(300px,3rem);
+}
+.labelH4{
+    @include label-sub(120px,default);
+}
+.boxInfo{
+    height: 400px;
+    width: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    left: 170px;
+}
+@mixin label-h3($right:170px,$font-size:1rem){
+    font-weight: 500;
+    position: relative;
+    right: $right;
+    margin-bottom: 10px;
+    font-size: $font-size;
+}
+.labelH3{
+    @include label-h3(170px,1rem);
+}
+.labelH31{
+    @include label-h3(160px,1rem);
+}
+.labelH32{
+    @include label-h3(200px,1rem);
+}
+.inputName{
+    width: 500px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+}
+.inputName:hover{
+    border-color: $color-principal;
+}
+.inputName:focus{
+    outline: none;
+    border-style: solid;
+    border-width: 3px;
+    border-color: $color-principal;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+.inputDescription{
+    width: 500px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.inputDescription:hover{
+    border-color: $color-principal;
+}
+.inputDescription:focus{
+    outline: none;
+    border-style: solid;
+    border-width: 3px;
+    border-color: $color-principal;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+

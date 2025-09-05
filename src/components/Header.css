@@ -1,0 +1,58 @@
+.header{
+    width: 1250px;
+    height: 30px;
+    border-bottom: 1px ridge rgb(248, 243, 238);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    gap: 8px;
+    text-align: center;
+    background-color: white;
+}
+.button{
+    background-color: rgb(255, 102, 0) !important;
+    float: right;
+    position: relative;
+    right: 10px;
+    margin-left: 10px;
+    color: white !important;
+    font-weight: 400 !important;
+    border-radius: 10px;
+}
+.buttonHover{
+    background-color: transparent !important;
+    color: black !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    font-weight: 400 !important;
+    border-radius: 10px;
+
+}
+.buttonHover:hover{
+    color: white !important;
+    background-color: rgb(255, 102, 0) !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: 600 !important;
+}
+.labelHeader{
+    color:rgb(83, 83, 83);
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+.labelMenu{
+    width: fit-content !important;
+    cursor: pointer;
+}
+.labelHeader:hover{
+    color: black !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.iconRestaurant{
+    width: 40px;
+    height: 40px;
+    color: rgb(255, 102, 0) !important;
+    cursor: pointer;
+}
