@@ -1,0 +1,160 @@
+.body{
+    background-color: rgb(248, 243, 238) !important;
+    text-align: center;
+    height: 490px;
+}
+.sectionMiddle{
+    background-color: rgb(255, 251, 248) !important;
+    text-align: center;
+    min-height: 490px;
+    height: 700px;
+}
+.header{
+    width: 1250px;
+    height: 30px;
+    border-bottom: 1px ridge rgb(248, 243, 238);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    gap: 8px;
+    text-align: center;
+    background-color: white;
+}
+.button{
+    background-color: rgb(255, 102, 0) !important;
+    float: right;
+    position: relative;
+    right: 10px;
+    margin-left: 10px;
+    color: white !important;
+    font-weight: 400 !important;
+    border-radius: 10px;
+}
+.buttonStart{
+    background-color: rgb(255, 102, 0) !important;
+    position: relative;
+    top: 170px;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 10px;
+}
+
+.buttonRestaurant{
+    background-color: rgb(255, 102, 0) !important;
+    float: right;
+    color: white !important;
+    font-weight: 600 !important;
+    right: 50%;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    width: 210px;
+    height: 38px;
+    font-size: medium;
+    border-radius: 10px;
+}
+.buttonToRestaurant{
+    background-color: transparent !important;
+    float: right;
+    right: 15.5%;
+    width: 210px;
+    height: 38px;
+    font-size: medium;
+    color: black !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    font-weight: 400 !important;
+    border-style: ridge;
+    border-color: rgb(203, 203, 203);
+    border-radius: 10px;
+}
+.buttonToRestaurant:hover{
+    color: white !important;
+    background-color: rgb(255, 102, 0) !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: 600 !important;
+}
+
+.buttonHover{
+    background-color: transparent !important;
+    color: black !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    font-weight: 400 !important;
+    border-radius: 10px;
+
+}
+.buttonHover:hover{
+    color: white !important;
+    background-color: rgb(255, 102, 0) !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: 600 !important;
+}
+.labelHeader{
+    color:rgb(83, 83, 83);
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+.labelMenu{
+    width: fit-content !important;
+    cursor: pointer;
+}
+.labelHeader:hover{
+    color: black !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.labelCenter{
+    font-size: 4rem;
+    font-weight: 700;
+    max-width: 900px;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 2rem;
+}
+.labelSub{
+    font-size: x-large;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    font-style: oblique;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: rgb(96, 96, 96);
+    
+}
+.iconRestaurant{
+    width: 40px;
+    height: 40px;
+    color: rgb(255, 102, 0) !important;
+    cursor: pointer;
+}
+.iconBox{
+    width: 60px;
+    height: 60px;
+    color: rgb(255, 102, 0) !important;
+    position: relative;
+    bottom: 40px;
+}
+.box{
+    width: 360px;
+    height: 220px;
+    position: relative;
+    border-style: groove;
+    border-color: rgb(255, 248, 243);
+    top: 40px;
+    border-radius: 20px;
+    margin-right: 15px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    background-color: white;
+    align-items: center;
+}
+.bigBox{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    max-width: 1300px;
+}
