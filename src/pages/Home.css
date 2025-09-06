@@ -8,18 +8,35 @@
     text-align: center;
     min-height: 490px;
     height: 700px;
+    
 }
 .buttonStart{
-    background-color: rgb(255, 102, 0) !important;
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 200, 150)) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.2) !important;
+    transition: all 0.3s ease;
+    border-radius: 8px !important;
     position: relative;
-    top: 170px;
+    top: 150px;
     color: white !important;
     font-weight: 600 !important;
-    border-radius: 10px;
+    margin-bottom: 30px !important;
+    
+}
+.buttonStart:hover{
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
 }
 
 .buttonRestaurant{
-    background-color: rgb(255, 102, 0) !important;
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 200, 150)) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.2) !important;
+    transition: all 0.3s ease;
+    border-radius: 8px !important;
     float: right;
     color: white !important;
     font-weight: 600 !important;
@@ -29,7 +46,11 @@
     width: 210px;
     height: 38px;
     font-size: medium;
-    border-radius: 10px;
+}
+.buttonRestaurant:hover{
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
 }
 .buttonToRestaurant{
     background-color: transparent !important;
@@ -48,8 +69,9 @@
 }
 .buttonToRestaurant:hover{
     color: white !important;
-    background-color: rgb(255, 102, 0) !important;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
     font-weight: 600 !important;
 }
 
@@ -75,13 +97,12 @@
 .labelSub{
     font-size: x-large;
     max-width: 700px;
-    text-align: center;
+    text-align: center ;
     margin: 0 auto;
     font-style: oblique;
     font-weight: 400;
     margin-bottom: 1rem;
     color: rgb(96, 96, 96);
-    
 }
 .iconRestaurant{
     width: 40px;

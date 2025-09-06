@@ -1,0 +1,30 @@
+
+/* Thumb cuando está OFF */
+.custom-switch{
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  bottom: 510px;
+  left: 350px;
+}
+.custom-switch .ant-switch::before {
+  background-color: #ccc !important; /* Gris */
+  transition: all 0.3s ease !important;
+}
+
+/* Thumb cuando está ON */
+.custom-switch.ant-switch-checked::before {
+  background-color: #FF6B35 !important; /* Naranja vibrante */
+}
+
+/* Fondo del track cuando está ON */
+.custom-switch.ant-switch-checked {
+  background-color: #FF6B35 !important; /* Fondo claro naranja */
+  border-color: #FF6B35 !important;
+}
+
+/* Fondo del track cuando está OFF */
+.custom-switch .ant-switch {
+  background-color: #f0f0f0 !important;
+  border-color: #d9d9d9 !important;
+}

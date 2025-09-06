@@ -16,7 +16,7 @@ const Home = ()=> {
         <p className="labelSub"> Descubre restaurantes increíbles y explora sus menús digitales.Para restaurantes: digitaliza tu carta gratis y actualízala en tiempo real
               </p>
         <Button type="primary" icon={<RiRestaurantLine/>}className="buttonRestaurant">Explorar restaurantes</Button>
-        <Link to="/restaurants" style={{ textDecoration: 'none' }}>
+        <Link to="/viewrestaurants" style={{ textDecoration: 'none' }}>
             <Button type="primary" icon={<FiUsers/>} className="buttonToRestaurant">Para restaurantes</Button>
         </Link>
         
