@@ -1,4 +1,3 @@
-// src/components/StatusSwitch.jsx
 import { Switch } from 'antd';
 import { useState } from 'react';
 import { notification } from 'antd';

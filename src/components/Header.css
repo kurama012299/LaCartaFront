@@ -35,9 +35,8 @@
     color: black !important;
     transition: all 0.3s ease !important;
     box-shadow: none !important;
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     border-radius: 10px;
-
 }
 .buttonHover:hover{
     color: white !important;
