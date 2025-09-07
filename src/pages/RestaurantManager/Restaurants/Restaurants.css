@@ -1,11 +1,11 @@
-.body1 {
+.bodyRestaurants {
   background-color: rgb(255, 251, 248);
   height: 1000px;
 }
 
 .labelTop {
   position: relative;
-  right: 250px;
+  left: 170px;
   margin-bottom: 10px;
   font-size: 2rem;
   font-weight: 700;
@@ -21,24 +21,11 @@
   margin-bottom: 3rem;
   color: rgb(96, 96, 96);
   position: relative;
-  right: 300px;
-}
-
-.labelH4 {
-  font-size: large;
-  max-width: 700px;
-  text-align: center;
-  margin: 0 auto;
-  font-style: oblique;
-  font-weight: 400;
-  margin-bottom: default;
-  color: rgb(96, 96, 96);
-  position: relative;
-  right: 120px;
+  right: 290px;
 }
 
 .boxInfo {
-  height: 400px;
+  height: 500px;
   width: 600px;
   background: white;
   border-radius: 16px;
@@ -49,37 +36,64 @@
   left: 170px;
 }
 
-.labelH3 {
+.labelInfo {
   font-weight: 500;
   position: relative;
-  right: 170px;
+  left: 25px;
   margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: large;
 }
 
-.labelH31 {
-  font-weight: 500;
+.labelData {
+  font-size: medium;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  font-style: oblique;
+  font-weight: 400;
+  margin-bottom: default;
+  color: rgb(96, 96, 96);
   position: relative;
-  right: 160px;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  right: 165px;
 }
 
-.labelH32 {
+.labelName {
   font-weight: 500;
   position: relative;
-  right: 200px;
+  left: 27px;
   margin-bottom: 10px;
   font-size: 1rem;
 }
 
 .inputName {
-  width: 500px;
+  width: 560px;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #f0f0f0;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  left: 20px;
 }
+
+.labelDescription {
+  font-weight: 500;
+  position: relative;
+  left: 27px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.inputDescription {
+  width: 560px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  left: 20px;
+}
+
+
 
 .inputName:hover {
   border-color: rgb(255, 102, 0);
@@ -93,24 +107,105 @@
   box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
 }
 
-.inputDescription {
-  width: 500px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
+
 
 .inputDescription:hover {
-  border-color: rgb(255, 102, 0);
+  border-color: rgb(255, 102, 0) !important;
 }
 
 .inputDescription:focus {
   outline: none;
   border-style: solid;
   border-width: 3px;
+  border-color: rgb(255, 102, 0) !important;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2) !important;
+}
+
+.labelType{
+  font-weight: 500;
+  position: relative;
+  left: 27px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.selectType{
+  width: 275px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  left: 20px;
+}
+
+.labelPhone{
+  font-weight: 500;
+  position: relative;
+  left: 320px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  bottom: 76px;
+}
+.inputPhone{
+  width: 275px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  left: 310px;
+  bottom: 80px;
+
+}
+
+.inputPhone:hover {
+  border-color: rgb(255, 102, 0);
+}
+
+.inputPhone:focus {
+  outline: none;
+  border-style: solid;
+  border-width: 3px;
   border-color: rgb(255, 102, 0);
   box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.labelAdress {
+  font-weight: 500;
+  position: relative;
+  left: 27px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  bottom: 80px;
+}
+
+.inputAdress {
+  width: 560px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  left: 20px;
+  bottom: 80px;
+}
+
+.buttonSave{
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 200, 150)) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.2) !important;
+    transition: all 0.3s ease;
+    border-radius: 8px !important;
+    width: 560px;
+    left: 20px;
+    bottom: 45px;
+}
+.buttonSave:hover{
+    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
 }
 
 /*# sourceMappingURL=Restaurants.css.map */
