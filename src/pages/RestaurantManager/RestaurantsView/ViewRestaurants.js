@@ -16,6 +16,7 @@ import { message, Popconfirm } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { IoFishOutline } from "react-icons/io5";
 import { GiBowlOfRice } from "react-icons/gi";
+import { Link } from 'react-router-dom';
 
 const confirm = e => {
   console.log(e);
@@ -48,7 +49,9 @@ const ViewRestaurants =()=>{
                         Porque en cada bocado, no solo comes… vives una tradición.</p>
                     <Tag icon={<LuLeaf />} className="tagFood" color='green'>vegetariano</Tag>
                     <Tag icon={<TbToolsKitchen2 />} className="tagFood2" color="volcano">artesanal</Tag>
-                    <FaEdit className="iconEdit"></FaEdit>
+                    <Link to="/restaurants" style={{ textDecoration: 'none' }}>
+                        <FaEdit className="iconEdit"></FaEdit>
+                    </Link>
                     <Popconfirm
                         title="Eliminar restaurante"
                         description="¿Estás seguro de eliminar este Restaurante?"
