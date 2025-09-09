@@ -6,8 +6,12 @@ import Icon from "../../../components/Icon";
 import EspaghettiIcon from "../../../assets/icons/icon-espaghetti.png.png";
 import Tacos from "../../../assets/icons/icon-tacos.png";
 import Sushi from "../../../assets/icons/icon-sushi.png";
+import { useLoading } from "../../../hooks/LoadingContext";
+import { useEffect } from "react";
 
+ 
 const DiscoverView=()=>{
+     
     return(
         <body >
             <section className="bodyDiscover">
