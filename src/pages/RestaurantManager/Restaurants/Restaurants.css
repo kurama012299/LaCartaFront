@@ -68,6 +68,13 @@
   margin-bottom: 10px;
   font-size: 1rem;
 }
+.labelDescription {
+  font-weight: 500;
+  position: relative;
+  left: 27px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
 
 .inputName {
   width: 560px;
@@ -78,26 +85,6 @@
   position: relative;
   left: 20px;
 }
-
-.labelDescription {
-  font-weight: 500;
-  position: relative;
-  left: 27px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.inputDescription {
-  width: 560px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  left: 20px;
-}
-
-
 
 .inputName:hover {
   border-color: rgb(255, 102, 0);
@@ -113,16 +100,27 @@
 
 
 
+.inputDescription {
+  width: 560px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  position: relative;
+  left: 20px;
+}
+
 .inputDescription:hover {
   border-color: rgb(255, 102, 0) !important;
+  
 }
 
 .inputDescription:focus {
   outline: none;
   border-style: solid;
-  border-width: 3px;
   border-color: rgb(255, 102, 0) !important;
   box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2) !important;
+  
 }
 
 .labelType{
@@ -141,7 +139,15 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   left: 20px;
-  
+  border-radius: 6px;
+  border-color: white;
+}
+
+.selectType:hover{
+  border-color: rgb(255, 102, 0) !important;
+  border: 1px solid #f0f0f0;
+  border-color: white;
+
 }
 
 .labelPhone{
@@ -285,5 +291,37 @@
   bottom: 532px;
 
 }
+
+.labelTypeFood{
+  font-weight: 500;
+  position: relative;
+  left: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: large;
+  font-weight: 700;
+
+}
+
+.boxMenu{
+  height: 350px;
+  width: 938px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  margin-top: 100px;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  left: 165px;
+  bottom: 532px;
+
+}
+
+.labelMenu{
+  
+
+}
+
 
 /*# sourceMappingURL=Restaurants.css.map */

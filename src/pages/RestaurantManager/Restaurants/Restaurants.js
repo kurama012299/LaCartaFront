@@ -4,6 +4,10 @@ import Header from "../../../components/Header";
 import { Input, Select, Button, Popconfirm} from "antd";
 import ButtonPopAsync from '../../../components/ButtonPopAsync';
 import SelectTag from '../../../components/SelectTag';
+import { HiOutlinePhotograph } from "react-icons/hi";
+import React, { useRef, useState } from 'react';
+import Tabss from '../../../components/Tabs';
+
 
 
 const { TextArea } = Input;
@@ -13,6 +17,24 @@ const handleChange = (value: String)=> {
 
 
 const Restaurants =()=>{
+    const [imageSrc, setImageSrc] = useState(RestaurantMexican);
+    const fileInputRef = useRef(null);
+
+    const handleButtonClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                setImageSrc(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     return(
         <body >
             <section className="bodyRestaurants">
@@ -39,14 +61,36 @@ const Restaurants =()=>{
                 <div className="boxPhoto">
                     <h3 className="labelPhoto">Imagen del Restaurante</h3>
                     <h4 className="labelMainPhoto">Foto principal de tu restaurante</h4>
-                    <img className="photo" src={RestaurantMexican} alt="Restaurante mexicano" ></img>
-                    <button className="buttonChange" size="large" type="primary">Cambiar Imagen </button>
+                    <img className="photo" src={imageSrc} alt="Restaurante" />
+                    <Button
+                        className="buttonChange"
+                        icon={<HiOutlinePhotograph />}
+                        size="large"
+                        type="primary"
+                        onClick={handleButtonClick}
+                    >
+                        Cambiar Imagen
+                    </Button>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        ref={fileInputRef}
+                        style={{ display: 'none' }}
+                        onChange={handleFileChange}
+                    />
+                </div>
+                
+                <div  className="boxType">
+                    <h3 className="labelTypeFood">Etiquetas</h3>
+                    <SelectTag></SelectTag>
                 </div>
 
                 
-                    <div  className="boxType">
-                        <SelectTag onChange={handleChange} options={[{value: "Italiana", label:"Italiana"}]} className="selectType"></SelectTag>
-                        </div>
+               {/* <div className="boxMenu">
+                    <h3 className="labelMenu">Su Menú</h3>
+                    <Tabss></Tabss>
+
+                </div>*/}
                 
 
             </section>

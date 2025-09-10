@@ -1,14 +1,27 @@
 .selectTypeFood {
-    position: relative; 
-    background: transparent !important;
+    position: relative !important; 
+    background-color: red !important;
     border: none !important;
-    color: rgb(126, 51, 51) !important;
+    color: rgb(255, 255, 255) !important;
     box-shadow: 0 2px 8px rgba(255, 102, 0, 0.2) !important;
     transition: all 0.3s ease;
     border-radius: 8px !important;
     width: 280px !important;
     left: 20px !important;
     margin-bottom: 20px !important; 
+    cursor: pointer !important;
+}
 
+.selectTypeFoodContainer {
+  position: relative !important;
+  right: 10px;
+  margin-top: 10px;
+  display: flex;
+  height: 89px; 
+  width: 100%;
+}
+
+.ant-select-selector {
+  cursor: pointer !important;
 }
 
