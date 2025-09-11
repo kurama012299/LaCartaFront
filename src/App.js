@@ -16,12 +16,12 @@ function App() {
     <RouteListener/>
     <GlobalLoading/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/restaurants" element={<Restaurants/>}/>
         <Route path="/viewrestaurants" element={<ViewRestaurants/>}/>
         <Route path="/discoverview" element={<DiscoverView/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>
     </LoadingProvider>

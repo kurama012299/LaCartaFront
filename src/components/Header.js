@@ -7,18 +7,15 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header">
-      {/* Logo y nombre */}
+      <Link to="/home" style={{ textDecoration: 'none' }}>
       <div className="logo-container">
         <RiRestaurantLine className="iconRestaurant" />
         <h3 className="labelMenu">La Carta</h3>
       </div>
-
-      {/* Enlace Descubrir */}
+      </Link>
       <Link to="/discoverview" style={{ textDecoration: 'none' }}>
         <h4 className="labelHeader">Descubrir</h4>
       </Link>
-
-      {/* Botones de sesión */}
       <div className="button-group">
         <Button type="primary" className="buttonHover">Iniciar sesión</Button>
         <Button type="primary" className="button">Registrarse</Button>

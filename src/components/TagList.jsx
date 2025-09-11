@@ -45,7 +45,7 @@ const TagList = ({ tags = [] }) => {
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              cursor: 'default',
+              cursor: 'text',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
               transition: 'all 0.2s ease',
             }}

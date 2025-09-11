@@ -50,9 +50,10 @@ const ViewRestaurants =()=>{
   };
 
     return (
-      <body className="bodyRestaurants">
+      <body className="bodyRestaurantsManager">
         <Header />
         <h1 className="labelRestaurants">Restaurantes</h1>
+        <div className="containerButton">
         <Button
           icon={<RiRestaurantLine />}
           className="buttonNew"
@@ -61,6 +62,7 @@ const ViewRestaurants =()=>{
         >
           Nuevo Restaurante
         </Button>
+        </div>
        <div>
           <section className='sectionnew'>
           <div>

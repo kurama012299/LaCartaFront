@@ -3,7 +3,7 @@
   height: 60px;
   border-bottom: 1px ridge rgb(248, 243, 238);
   display: flex;
-  justify-content: space-between; /* ← Esto coloca los elementos en sus posiciones */
+  justify-content: space-between;
   align-items: center;
   padding: 16px;
   background-color: white;
@@ -15,6 +15,7 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .labelMenu {

@@ -29,7 +29,15 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
 }
-
+.divButtons{
+  display: flex;           
+  justify-content: center; 
+  align-items: center;    
+  gap: 10px;               
+  margin: 30px auto;       
+  flex-wrap: nowrap;   
+  margin-bottom: 1rem;
+}
 .buttonRestaurant{
     background-color: transparent !important;
     color: black !important;
@@ -40,10 +48,8 @@
     border-color: rgb(203, 203, 203);
     border-radius: 10px;
     transition: all 0.3s ease;
-    float: right;
     font-weight: 600 !important;
-    right: 50%;
-    margin-bottom: 1rem;
+    
     margin-right: 1rem;
     width: 210px;
     height: 38px;
@@ -56,8 +62,6 @@
 }
 .buttonToRestaurant{
     background-color: transparent !important;
-    float: right;
-    right: 15.5%;
     width: 210px;
     height: 38px;
     font-size: medium;
@@ -128,4 +132,5 @@
     gap: 10px;
     justify-content: center;
     max-width: 1300px;
+    margin: 0 auto;
 }
