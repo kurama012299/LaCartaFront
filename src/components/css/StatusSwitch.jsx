@@ -1,24 +1,25 @@
 import { Switch } from 'antd';
 import { useState } from 'react';
 import { notification } from 'antd';
+import { useFetch } from '../../services/useFetch';
 import './StatusSwitch.css';
 
-function StatusSwitch() {
+function StatusSwitch({restaurantName}) {
   const [isActive, setIsActive] = useState(true);
-
+  
   const handleChange = (checked) => {
     setIsActive(checked);
     console.log(checked ? 'Restaurante ACTIVADO' : 'Restaurante DESACTIVADO');
     if(!isActive)
        notification.success({
       message: 'Restaurante activado',
-      description: 'El restaurante fue activado correctamente.',
+      description: `El restaurante ${restaurantName} fue activado correctamente.`,
       duration: 3,
     });
     else{
       notification.warning({
       message: 'Restaurante desactivado',
-      description: 'Se desactivo el restaurante mexicano con exito',
+      description: `Se desactivo el restaurante ${restaurantName} con éxito`,
       duration: 4,
     });
   };

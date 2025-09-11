@@ -7,14 +7,13 @@ const RouteListener = () => {
   const { setIsLoading } = useLoading();
 
   useEffect(() => {
-    // Activar loader al cambiar de ruta
     setIsLoading(true);
 
     // Desactivar después de X milisegundos (simulando carga)
     // O bien, podrías esperar a que se carguen datos reales (ver paso 6)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Ajusta este tiempo según necesites
+    }, 2500); // Ajusta este tiempo según necesites
 
     // Cleanup
     return () => clearTimeout(timer);

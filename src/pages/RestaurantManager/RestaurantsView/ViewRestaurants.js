@@ -17,6 +17,12 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import { IoFishOutline } from "react-icons/io5";
 import { GiBowlOfRice } from "react-icons/gi";
 import { Link } from 'react-router-dom';
+import { useFetch } from '../../../services/useFetch';
+import RestaurantCard from '../../../components/RestaurantCard';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const confirm = e => {
   console.log(e);
@@ -30,70 +36,45 @@ const cancel = e => {
 
 
 const ViewRestaurants =()=>{
+    const { data, loading, error } = useFetch("http://localhost:8080/restaurants");
+    const navigate=useNavigate();
+
+  if (loading) return <div>Cargando restaurantes...</div>;
+  if (error) return <div>Error al cargar: {error.message}</div>;
+  if (!data || data.length === 0) return <div>No hay restaurantes disponibles.</div>;
+  
+
+  const handleEdit = (id) => {
+    console.log("Editar restaurante con ID:", id);
+    navigate('/restaurants');
+  };
+
     return (
-        <body className="body">
-            <Header />
-            <h1>Restaurantes</h1>
-            <Button icon={<RiRestaurantLine />} className="buttonNew" size="large" type="primary"> Nuevo Restaurante</Button>
-            <div className="galery">
-                <div className="boxPicture">
-                    <img className="image" src={RestaurantMexican} alt="Restaurante mexicano" ></img>
-                    <h2 className="labelNameRestaurant">El Rincón mexicano</h2>
-                    <IoCallOutline className="iconCall" />
-                    <h5 className="numberPhone">+53 54347890</h5>
-                    <MdOutlinePlace className="iconUbi" />
-                    <h5 className="ubication">La Habana,Vedado</h5>
-                    <p className="paragraph">Recetas tradicionales, pasadas de generación en generación.
-                        Preparadas con ingredientes auténticos, muchos de ellos importados directamente de México.
-                        Cada plato es un homenaje a la cocina familiar: cálida, generosa y llena de sabor.
-                        Porque en cada bocado, no solo comes… vives una tradición.</p>
-                    <Tag icon={<LuLeaf />} className="tagFood" color='green'>vegetariano</Tag>
-                    <Tag icon={<TbToolsKitchen2 />} className="tagFood2" color="volcano">artesanal</Tag>
-                    <Link to="/restaurants" style={{ textDecoration: 'none' }}>
-                        <FaEdit className="iconEdit"></FaEdit>
-                    </Link>
-                    <Popconfirm
-                        title="Eliminar restaurante"
-                        description="¿Estás seguro de eliminar este Restaurante?"
-                        icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
-                        onConfirm={confirm}
-                        onCancel={cancel}
-                        okText="Yes"
-                        cancelText="No"
-                    ><MdDeleteForever className="iconDelete"></MdDeleteForever>
-                    </Popconfirm>
-                    
-                    <StatusSwitch></StatusSwitch>
-                </div>
-                <div className="boxPictureAsian">
-                    <img className="imageAsian" src={RestaurantAsian} alt="Restaurante asiático" ></img>
-                    <h2 className="labelNameRestaurant">Sushi Zen</h2>
-                    <IoCallOutline className="iconCall" />
-                    <h5 className="numberPhone">+53 54387890</h5>
-                    <MdOutlinePlace className="iconUbi" />
-                    <h5 className="ubication">La Habana,Marianao</h5>
-                    <p className="paragraph">Sushi elaborado con técnica tradicional y productos de la más alta calidad.
-                        Pescado fresco, arroz perfectamente sazonado y detalles que honran la cocina japonesa.
-                        Cada plato es una experiencia de equilibrio, pureza y sabor.
-                        Bienvenido al arte del auténtico sushi japonés.</p>
-                    <Tag icon={<IoFishOutline/>} className="tagFoodSushi" color='green'>pescado fresco</Tag>
-                    <Tag icon={<GiBowlOfRice />} className="tagFood2" color="volcano">auténtico</Tag>
-                    <FaEdit className="iconEdit"></FaEdit>
-                    <Popconfirm
-                        title="Eliminar restaurante"
-                        description="¿Estás seguro de eliminar este Restaurante?"
-                        icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
-                        onConfirm={confirm}
-                        onCancel={cancel}
-                        okText="Yes"
-                        cancelText="No"
-                    ><MdDeleteForever className="iconDelete"></MdDeleteForever>
-                    </Popconfirm>
-                    
-                    <StatusSwitch></StatusSwitch>
-                </div>
-            </div>
-        </body>
+      <body className="bodyRestaurants">
+        <Header />
+        <h1 className="labelRestaurants">Restaurantes</h1>
+        <Button
+          icon={<RiRestaurantLine />}
+          className="buttonNew"
+          size="large"
+          type="primary"
+        >
+          Nuevo Restaurante
+        </Button>
+       <div>
+          <section className='sectionnew'>
+          <div>
+            {data.map((restaurant) => (
+              <RestaurantCard
+                key={restaurant.id}
+                restaurant={restaurant}
+                onEdit={handleEdit}
+              />
+            ))}
+          </div>
+          </section>
+        </div>
+      </body>
     );
 }
 export default ViewRestaurants;

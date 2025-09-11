@@ -1,0 +1,109 @@
+.boxPicture {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  width: 1100px;
+  min-height: 330px;
+  padding: 20px;
+  margin: 10px auto 60px 60px; /* top, right, bottom, left */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.image {
+  width: 410px;
+  height: 280px;
+  border-radius: 3px;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nombre del restaurante */
+.labelNameRestaurant {
+  font-size: x-large;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.info-row svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: #666;
+}
+.numberPhone{
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.numberPhone:hover{
+    color:  rgb(255, 102, 0);
+    text-decoration: underline;
+    transform: scale(1.09);
+    
+}
+.tag-container {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.info-row h5 {
+  font-weight: 400;
+  font-style: oblique;
+  font-size: medium;
+  color: rgb(96, 96, 96);
+  margin: 0;
+}
+.paragraph {
+  flex-grow: 1;
+  max-width: 550px;
+  font-size: large;
+  font-style: oblique;
+  font-weight: 400;
+  color: rgb(96, 96, 96);
+  margin: 16px 0;
+}
+
+.tag-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.iconEdit {
+  color: rgb(255, 102, 0);
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.iconEdit:hover {
+  transform: scale(1.5);
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
+}
