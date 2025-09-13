@@ -19,13 +19,16 @@ const Home = () => {
           Descubre restaurantes increíbles y explora sus menús digitales. Para restaurantes: digitaliza tu carta gratis y actualízala en tiempo real
         </p>
         <div className="buttonGroup">
-          <Button
+          <Link to="/discoverview" style={{ textDecoration: 'none' }}>
+            <Button
             type="primary"
             icon={<RiRestaurantLine />}
             className="buttonRestaurant"
           >
             Explorar restaurantes
           </Button>
+          </Link>
+          
           <Link to="/viewrestaurants" style={{ textDecoration: "none" }}>
             <Button
               type="primary"

@@ -1,0 +1,128 @@
+.loginBody{
+    min-height: 100vh;
+    background-color: #f8f3ee;
+}
+.boxLogin{
+    background: rgb(255, 255, 255);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+        margin: 120px auto 30px auto;
+        border: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        width: 400px;
+        min-height: 400px;
+
+}
+.content{
+    margin-bottom: 16px;
+    padding: 24px;
+    flex: 1;
+}
+.parhagraphLogin{
+    margin: 10px auto 20px auto ;
+    max-width: 350px;
+    font-style: oblique;
+    font-size: medium;
+    font-weight: 500;
+    color: #606060;
+
+
+}
+.boxLoginFooter{
+    background: linear-gradient(135deg, #ff6600, #ffb880);
+    border-color: black;
+    width: 100% !important;
+    height: 75px;
+    margin: 0 auto;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.iconRestaurantLogin {
+   font-size: 50px;
+    color: #f8d5bb;
+   
+}
+.labelRestauantLogin{
+    font-size: x-large;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(135deg, white, #ffb880); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.buttonInit{
+    margin: 0 auto;
+        background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 200, 150)) !important;
+        color: white !important;
+        border-radius: 16px !important;
+        font-size: large;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        justify-content: center !important;
+        width: 80%;
+        height: 40px;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+}
+.labelRegister{
+    color:#ff6600;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: small
+}
+.labelRegister:hover{
+    text-decoration: underline;
+}
+.buttonInit:hover{
+    color: white;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
+}
+.InputUsername{
+    background: rgb(255, 255, 255);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin: 0 auto;
+        width: 90%;
+        height: 50px;
+        border: 1px solid #f0f0f0;
+}
+.InputUsername:hover{
+    border-color: #ffb880 !important;
+}
+.InputUsername:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+    border-width: 2px !important;
+    border-color: #ff6600 !important;
+}
+.InputPassword{
+    background: rgb(255, 255, 255);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin: 20px auto;
+        width: 90%;
+        height: 50px;
+        border: 1px solid #f0f0f0;
+}
+.InputPassword:hover{
+    border-color: #ffb880;
+}
+.labelLogin{
+    align-items: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff6600, #ffb880); /* Gradiente horizontal */
+    -webkit-background-clip: text; /* Para Chrome, Safari, Edge */
+    -webkit-text-fill-color: transparent; /* Hace que el texto sea transparente y muestre el fondo */
+}
