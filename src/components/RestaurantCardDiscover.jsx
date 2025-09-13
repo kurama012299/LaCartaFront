@@ -1,20 +1,11 @@
 import React from "react";
-import "./RestaurantCard.css";
+import "./RestaurantCardDiscover.css";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlinePlace } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
-import StatusSwitch from "./css/StatusSwitch";
 import TagList from "./TagList";
 
-export default function RestaurantCard({ restaurant, onEdit, onDelete }) {
+export default function RestaurantCardDiscover({ restaurant }) {
   const { name, phoneNumber, municipalityName, description, restaurantTags = [], image, id } = restaurant;
-  const confirm = () => {
-    onDelete(id);
-  };
-
-  const cancel = () => {
-    console.log("Cancelado");
-  };
 
   return (
     <div className="boxPicture">
@@ -52,10 +43,6 @@ export default function RestaurantCard({ restaurant, onEdit, onDelete }) {
           </div>
         }
       </div>
-      <div className="actions">
-        <FaEdit className="iconEdit" onClick={() => onEdit(id)} />
-        <StatusSwitch restaurantName={name} restaurantId={id} />
-      </div>
     </div>
   );
-}
+};

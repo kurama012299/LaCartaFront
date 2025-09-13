@@ -1,136 +1,246 @@
-.body{
-    background-color: rgb(248, 243, 238) !important;
-    text-align: center;
-    height: 490px;
+.home {
+  min-height: 100vh;
+  background-color: #f8f3ee;
+  color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-.sectionMiddle{
-    background-color: rgb(255, 251, 248) !important;
-    text-align: center;
-    min-height: 490px;
-    height: 700px;
-    
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background-color: #f8f3ee;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.buttonStart{
-    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 200, 150)) !important;
-    border: none !important;
-    color: white !important;
-    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.2) !important;
-    transition: all 0.3s ease;
-    border-radius: 8px !important;
-    position: relative;
-    top: 150px;
-    color: white !important;
-    font-weight: 600 !important;
-    margin-bottom: 30px !important;
-    
+.labelCenter {
+    margin-top: 40px !important;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  max-width: 900px;
+  line-height: 1.2;
+  margin: 0 auto 2rem;
+  color: #222;
 }
-.buttonStart:hover{
-    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
-}
-.divButtons{
-  display: flex;           
-  justify-content: center; 
-  align-items: center;    
-  gap: 10px;               
-  margin: 30px auto;       
-  flex-wrap: nowrap;   
-  margin-bottom: 1rem;
-}
-.buttonRestaurant{
-    background-color: transparent !important;
-    color: black !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-    font-weight: 400 !important;
-    border-style: ridge;
-    border-color: rgb(203, 203, 203);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    font-weight: 600 !important;
-    
-    margin-right: 1rem;
-    width: 210px;
-    height: 38px;
-    font-size: medium;
-}
-.buttonRestaurant:hover{
-    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
-}
-.buttonToRestaurant{
-    background-color: transparent !important;
-    width: 210px;
-    height: 38px;
-    font-size: medium;
-    color: black !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-    font-weight: 600 !important;
-    border-style: ridge;
-    border-color: rgb(203, 203, 203);
-    border-radius: 10px;
-}
-.buttonToRestaurant:hover{
-    color: white !important;
-    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
-    font-weight: 600 !important;
-}
-.labelCenter{
-    font-size: 4rem;
-    font-weight: 700;
-    max-width: 900px;
-    text-align: center;
-    line-height: 1.2;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 2rem;
-}
-.labelSub{
-    font-size: x-large;
-    max-width: 700px;
-    text-align: center ;
-    margin: 0 auto;
-    font-style: oblique;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: rgb(96, 96, 96);
-}
-.iconRestaurant{
-    width: 40px;
-    height: 40px;
-    color: rgb(255, 102, 0) !important;
-    cursor: pointer;
-}
-.iconBox{
-    width: 60px;
-    height: 60px;
-    color: rgb(255, 102, 0) !important;
-    position: relative;
-    bottom: 40px;
-}
-.box{
-    width: 360px;
-    height: 220px;
-    position: relative;
-    top: 40px;
-    margin-right: 15px;
-    align-items: center;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px;
-    border: 1px solid #f0f0f0;
 
+.labelSub {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-style: oblique;
+  font-weight: 400;
+  color: #606060;
+  line-height: 1.5;
 }
-.bigBox{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    max-width: 1300px;
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.buttonRestaurant,
+.buttonToRestaurant {
+  background-color: transparent !important;
+  color: #222 !important;
+  border: 2px solid #cbcbcb !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  padding: 12px 24px !important;
+  min-width: 160px !important;
+  min-height: 40px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.buttonRestaurant:hover,
+.buttonToRestaurant:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb880) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(255, 102, 0, 0.3) !important;
+  border-color: transparent !important;
+}
+
+.sectionMiddle {
+  background-color: #fffaf8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 50px;
+  color: #222;
+}
+
+.bigBox {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.box {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  color: #ff6600;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.boxTitle {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #222;
+}
+
+.boxText {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #606060;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.sectionSubtitle {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin: 60px 0 20px;
+  color: #222;
+}
+
+.buttonStart {
+  background: linear-gradient(135deg, #ff6600, #ffb880) !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+  border-radius: 12px !important;
+  min-height: 40px !important;
+  font-size: clamp(1rem, 3vw, 1.2rem) !important;
+  padding: 14px 40px !important;
+  font-weight: 600 !important;
+  margin-top: 20px;
+}
+
+.buttonStart:hover {
+  background: linear-gradient(135deg, #ff6600, #ffb070) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4) !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px 30px;
+  }
+
+  .labelCenter {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+
+  .labelSub {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+  .bigBox {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .box {
+    max-width: 100%;
     margin: 0 auto;
+  }
+
+  .sectionSubtitle {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 12px 20px;
+  }
+
+  .labelCenter {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .buttonRestaurant,
+  .buttonToRestaurant {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  .sectionTitle,
+  .sectionSubtitle {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .iconBox {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box {
+    padding: 20px 16px;
+  }
+
+  .boxTitle {
+    font-size: 1.1rem;
+  }
+
+  .boxText {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+
+  .buttonStart {
+    font-size: 1rem;
+    padding: 14px 30px;
+    width: 100%;
+    max-width: 280px;
+    margin: 15px auto;
+  }
 }

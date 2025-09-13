@@ -1,121 +1,252 @@
-.bodyDiscover{
-    height: 300px;
-    background-color: rgb(255, 242, 234);
+/* ===== BASE ===== */
+.discover-container {
+  min-height: 100vh;
+  background-color: #fffaf8;
+  color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.labelSubDiscover{
-    font-size: 27px;
-    max-width: 700px;
-    text-align: center ;
-    margin: 0 auto;
-    font-style: oblique;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: rgb(96, 96, 96);
+.hero {
+  background-color: #fff9f4;
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.boxFilter{
-    background: white;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        padding: 24px;
-        margin-bottom: 20px;
-        border: 1px solid #f0f0f0;
-        height: 80px;
-        width: 1000px;
-        margin-left: 100px;
-        position: relative;
-        top: 36px;
-        margin: 0 auto;
+.BoxiconNoRestaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  min-height: 200px; 
+}
 
-        
+.BoxiconNoRestaurant img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1rem;
+  object-fit: contain;
 }
-.labelCategory{
-    position: relative;
-    bottom: 20px;
-    font-weight: 600;
+
+.BoxiconNoRestaurant h2 {
+  margin: 0;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: #666;
+  line-height: 1.5;
 }
-.buttonType{
-    display: flex !important;
-    width: 110px;
-    align-items: center !important;
-    font-size: 14px !important;  
-    gap: 8px !important;
-    margin-right: 10px !important;
-    background-color: white !important;
-    transition: all 0.3 ease !important;
-    color: black !important;
-    padding: 8px 12px !important;
-    font-weight: 500 !important;
-     border-style: ridge;
-    border-color: rgb(203, 203, 203);
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
 }
-.buttonType:hover{
-    background-color:  rgb(255, 102, 0) !important;
-    transform: translateY(-1px);
-    color: white !important;
+
+.subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  font-style: oblique;
+  margin-right: auto;
 }
-.buttonTypeMexican{
-    display: flex !important;
-    width: 110px;
-    align-items: center !important;
-    font-size: 14px !important;  
-    gap: 8px !important;
-    margin-right: 10px !important;
-    background-color: white !important;
-    transition: all 0.3 ease !important;
-    color: black !important;
-    padding: 8px 12px !important;
-    font-weight: 500 !important;
-    position: relative;
-    left: 120px !important;
-    bottom: 33px;
-    margin-left: 10px;
-     border-style: ridge;
-    border-color: rgb(203, 203, 203);
+
+/* ===== CATEGORÍAS POPULARES ===== */
+.categories-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  margin: 0 auto 40px;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
 }
-.buttonTypeMexican:hover{
-    background-color:  rgb(255, 102, 0) !important;
-    transform: translateY(-1px);
-    color: white !important;
+
+.viewAllButton {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  padding: 4px 8px !important;
+  background-color: white !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-.buttonTypeAsian{
-    display: flex !important;
-    width: 110px;
-    align-items: center !important;
-    font-size: 14px !important;  
-    gap: 8px !important;
-    margin-right: 10px !important;
-    background-color: white !important;
-    transition: all 0.3 ease !important;
-    color: black !important;
-    padding: 8px 12px !important;
-    font-weight: 500 !important;
-    position: relative;
-    left: 250px !important;
-    bottom: 64px;
-    margin-left: 10px;
-    border-style: ridge;
-    border-color: rgb(203, 203, 203);
+
+.viewAllButton:hover {
+  background-color: #ffe0d5 !important;
+  border-color: #ff6600 !important;
+  color: #ff6600 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
 }
-.buttonTypeAsian:hover{
-    background-color:  rgb(255, 102, 0) !important;
-    transform: translateY(-1px);
-    color: white !important;
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 110px;
+  margin-left: 37px;
+  color: #222;
+  text-align: left;
 }
-.labelRestaurantsMention{
-    font-size: x-large;
-    font-weight: 700;
-    position: relative;
-    left: 110px;
-    margin-bottom: 1rem;
+
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
 }
-.labelSubDiscoverRestaurants{
-    font-size: 18px;
-    max-width: 700px;
-    position: relative;
-    right: 160px;
-    margin: 0 auto;
-    font-style: oblique;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: rgb(96, 96, 96);
+
+/* ===== BOTONES DE CATEGORÍA ===== */
+.category-button {
+  background-color: white !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 100px;
+  height: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.category-button:hover {
+  background-color: #ffe0d5 !important;
+  border-color: #ff6600 !important;
+  color: #ff6600 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+.category-button:active {
+  transform: translateY(0);
+}
+
+/* ===== LISTA DE RESTAURANTES ===== */
+.restaurants-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.restaurants-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+  text-align: center;
+}
+
+.restaurants-subtitle {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.restaurants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.restaurant-item {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .categories-grid {
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .category-button {
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .restaurants-title {
+    font-size: 1.5rem;
+  }
+
+  .restaurants-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 12px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .categories-grid {
+    gap: 10px;
+  }
+
+  .category-button {
+    min-width: 70px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .restaurants-title {
+    font-size: 1.4rem;
+  }
 }
