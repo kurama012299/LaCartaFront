@@ -8,6 +8,7 @@ import Restaurants from './pages/RestaurantManager/Restaurants/Restaurants';
 import ViewRestaurants from './pages/RestaurantManager/RestaurantsView/ViewRestaurants';
 import DiscoverView from './pages/SharesViews/DiscoverView/DiscoverView';
 import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/viewrestaurants" element={<ViewRestaurants/>}/>
         <Route path="/discoverview" element={<DiscoverView/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>

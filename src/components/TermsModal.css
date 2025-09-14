@@ -1,0 +1,50 @@
+/* Estilo base del checkbox (sin cambios, mantiene aspecto original) */
+.checkBoxTerms .ant-checkbox-inner {
+  border-color: #d9d9d9; /* Borde gris claro (igual que Ant Design por defecto) */
+  background-color: white; /* Fondo blanco (igual que por defecto) */
+  border-radius: 2px; /* Radio por defecto de Ant Design */
+  width: 16px;
+  height: 16px;
+}
+
+/* Cuando está marcado: cambia el fondo a naranja y deja la palomita blanca */
+.checkBoxTerms .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ff6600 !important; /* Naranja claro de Material Design — perfecto */
+  border-color: #ffa726 !important;
+}
+
+/* ✅ PALOMITA BLANCA — ESCLAVIZADA A LA CLASE CORRECTA */
+.checkBoxTerms .ant-checkbox-checked .ant-checkbox-inner::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+/* Estado hover: suave resaltado en naranja */
+.checkBoxTerms:hover .ant-checkbox-inner {
+  border-color: #ff6600;
+  background-color: #fffaf0; /* Fondo muy suave para dar feedback visual */
+}
+
+/* Estado focus: sombra ligera en naranja */
+.checkBoxTerms .ant-checkbox:focus-within .ant-checkbox-inner {
+  box-shadow: 0 0 0 2px rgba(255, 167, 38, 0.2); /* Naranja transparente */
+  border-color: #ff6600;
+}
+
+/* Si está deshabilitado — mantén el estilo original */
+.checkBoxTerms.ant-checkbox-disabled .ant-checkbox-inner {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  opacity: 0.5;
+}
+.buttonOk{
+      background: linear-gradient(135deg, #ff6600, #ffb880) !important;
+}

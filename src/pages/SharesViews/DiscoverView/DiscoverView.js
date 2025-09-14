@@ -6,8 +6,7 @@ import Icon from "../../../components/Icon";
 import EspaghettiIcon from "../../../assets/icons/icon-espaghetti.png.png";
 import Tacos from "../../../assets/icons/icon-tacos.png";
 import Sushi from "../../../assets/icons/icon-sushi.png";
-import RiceIcon from "../../../assets/icons/icon-arroz.png"; 
-import InternationalIcon from "../../../assets/icons/icon-internacional.png"; 
+import RiceIcon from "../../../assets/icons/icon-arroz.png";  
 import AmericanIcon from "../../../assets/icons/icon-hamburguesa.png"; 
 import ChineseIcon from "../../../assets/icons/icon-dumpling.png";
 import MeatIcon from "../../../assets/icons/icon-carne.png";
@@ -15,7 +14,6 @@ import RestaurantCardDiscover from "../../../components/RestaurantCardDiscover";
 import { useFetch } from "../../../services/useFetch";
 import { useState ,useEffect} from "react";
 import NoRestaurantIcon from "../../../assets/icons/icon-no-comida.png";
-import { type } from "@testing-library/user-event/dist/type";
 
 
 const DiscoverView = () => {
@@ -64,9 +62,8 @@ const DiscoverView = () => {
     { name: "Japonesa", icon: Sushi , id:0 },
     { name: "Mexicana", icon: Tacos , id:1},
     { name: "Criolla", icon: MeatIcon , id:2},
-    { name: "Internacional", icon: InternationalIcon, id:6 },
     { name: "Americana", icon: AmericanIcon, id:5 },
-    { name: "China", icon: ChineseIcon },
+    { name: "China", icon: ChineseIcon ,id:6},
     { name : "Koreana", icon: RiceIcon ,id: 3},
   ];
 
@@ -77,6 +74,7 @@ const DiscoverView = () => {
      if (data?.length === 0 && selectedCategory !== null) {
        info();
        setSelectedCategory(null)
+       
      }
    }, [data, selectedCategory]);
 
