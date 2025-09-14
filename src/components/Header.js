@@ -10,7 +10,7 @@ const Header = () => {
       <Link to="/home" style={{ textDecoration: 'none' }}>
         <div className="logo-container">
           <RiRestaurantLine className="iconRestaurant" />
-          <h3 className="labelMenu">La Carta</h3>
+          <h3 className="labelMenu">LaCarta</h3>
         </div>
       </Link>
       <div className="nav-desktop"> 

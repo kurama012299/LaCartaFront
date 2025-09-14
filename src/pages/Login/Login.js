@@ -45,18 +45,32 @@ const Login=()=>{
             <Button type="primary" className="buttonInit">
               Entrar
             </Button>
-            <div style={{ display: "flex", gap: 8, alignItems: "center" ,margin:"5px auto"}}>
-              <span style={{fontSize:"small"}}>¿No tienes una cuenta?</span>
-              <span className="labelRegister">
-                Regístrate aquí
-              </span>
+            <div
+              style={{
+                display: "flex",
+                gap: 8,
+                alignItems: "center",
+                margin: "5px auto",
+              }}
+            >
+              <span style={{ fontSize: "small" }}>¿No tienes una cuenta?</span>
+              <span className="labelRegister">Regístrate aquí</span>
             </div>
           </div>
           <div className="boxLoginFooter">
-              <div style={{ display: "flex", gap: 8, alignItems: "center" ,margin:"5px auto"}}>
-                <span className="iconRestaurantLogin"><RiRestaurantLine /></span>
-                <span className="labelRestauantLogin">LaCarta</span>
-              </div>
+            <div
+              style={{
+                display: "flex",
+                gap: 8,
+                alignItems: "center",
+                margin: "5px auto",
+              }}
+            >
+              <span className="iconRestaurantLogin">
+                <RiRestaurantLine />
+              </span>
+              <span className="labelRestauantLogin">LaCarta</span>
+            </div>
           </div>
         </div>
       </body>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./DiscoverView.css";
 import Header from "../../../components/Header";
-import { Button } from "antd";
+import { Button ,Modal} from "antd";
 import Icon from "../../../components/Icon";
 import EspaghettiIcon from "../../../assets/icons/icon-espaghetti.png.png";
 import Tacos from "../../../assets/icons/icon-tacos.png";
@@ -13,37 +13,78 @@ import ChineseIcon from "../../../assets/icons/icon-dumpling.png";
 import MeatIcon from "../../../assets/icons/icon-carne.png";
 import RestaurantCardDiscover from "../../../components/RestaurantCardDiscover";
 import { useFetch } from "../../../services/useFetch";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import NoRestaurantIcon from "../../../assets/icons/icon-no-comida.png";
-import {Alert} from "antd";
+import { type } from "@testing-library/user-event/dist/type";
+
 
 const DiscoverView = () => {
-    
+    const info = () => {
+  Modal.info({
+    title: " No hay restaurantes encontrados",
+    okButtonProps: {
+      style: {
+        backgroundColor:
+          "rgb(255, 102, 0)",
+        border: "none",
+        color: "white",
+        boxShadow: "0 2px 8px rgba(255, 102, 0, 0.2)",
+      },
+    },
+    content: (
+      <div>
+        <h2 style={{ textAlign: "center"}}>
+          Lo sentimos no hay restaurantes disponibles de la categoría
+          seleccionada
+        </h2>
+      </div>
+    ),
+    icon: (
+      <img
+        src={NoRestaurantIcon}
+        style={{ width: "24px", height: "24px" }}
+      ></img>
+    ),
+
+    onOk() {},
+  });
+};
+
+
     const [selectedCategory, setSelectedCategory] = useState(null);
     
+    const apiUrl = selectedCategory
+  ? `http://localhost:8080/restaurants/restaurants-cousine-type?cousineType=${Number(selectedCategory)}`
+  : "http://localhost:8080/restaurants";
+
+  
   
    const cuisines = [
-    { name: "Italiana", icon: EspaghettiIcon },
-    { name: "Japonesa", icon: Sushi },
-    { name: "Mexicana", icon: Tacos },
-    { name: "Criolla", icon: MeatIcon },
-    { name: "Internacional", icon: InternationalIcon },
-    { name: "Americana", icon: AmericanIcon },
+    { name: "Italiana", icon: EspaghettiIcon ,id: 4},
+    { name: "Japonesa", icon: Sushi , id:0 },
+    { name: "Mexicana", icon: Tacos , id:1},
+    { name: "Criolla", icon: MeatIcon , id:2},
+    { name: "Internacional", icon: InternationalIcon, id:6 },
+    { name: "Americana", icon: AmericanIcon, id:5 },
     { name: "China", icon: ChineseIcon },
-    { name : "Koreana", icon: RiceIcon },
+    { name : "Koreana", icon: RiceIcon ,id: 3},
   ];
 
-  const { data, loading, error } = useFetch("http://localhost:8080/restaurants");
+ 
+  const { data, loading, error } = useFetch(apiUrl);
 
-  const filteredRestaurants = selectedCategory
-  ? data.filter(restaurant => restaurant.cuisineType?.includes(selectedCategory))
-  : data;
+   useEffect(() => {
+     if (data?.length === 0 && selectedCategory !== null) {
+       info();
+       setSelectedCategory(null)
+     }
+   }, [data, selectedCategory]);
+
 
     if (loading) return <div>Cargando restaurantes...</div>;
     if (error) return <div>Error al cargar: {error.message}</div>;
-    if (!data || data.length === 0) return <div>No hay restaurantes disponibles.</div>;
 
-
+  
 
   return (
     <div className="discover-container">
@@ -75,7 +116,7 @@ const DiscoverView = () => {
                 className={`category-button ${
                   selectedCategory === cuisine.name ? "active" : ""
                 }`}
-                onClick={() => setSelectedCategory(cuisine.name)}
+                onClick={() => setSelectedCategory(cuisine.id)}
                 icon={<Icon src={cuisine.icon} size={20} />}
                 type="primary"
                 size="middle"
@@ -89,9 +130,9 @@ const DiscoverView = () => {
       <section className="restaurants-section">
         <h2 className="restaurants-title">Todos los restaurantes</h2>
         <p className="restaurants-subtitle">
-          {filteredRestaurants.length} restaurantes encontrados
+          {data?.length} restaurantes encontrados
         </p>
-        {filteredRestaurants.length === 0 && selectedCategory !== null ? (
+        {data?.length === 0 && selectedCategory !== null ? (
           <div className="BoxiconNoRestaurant">
             <img
               src={NoRestaurantIcon}
@@ -103,7 +144,7 @@ const DiscoverView = () => {
             </h2>
           </div>
         ) : (
-          filteredRestaurants.map((restaurant) => (
+          data?.map((restaurant) => (
             <RestaurantCardDiscover
               key={restaurant.id}
               restaurant={restaurant}
@@ -114,5 +155,7 @@ const DiscoverView = () => {
     </div>
   );
 }
+
+
 
 export default DiscoverView;

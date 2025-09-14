@@ -1,0 +1,150 @@
+.boxPicture {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  width: 100%; /* ✅ Ahora ocupa todo el ancho disponible */
+  max-width: 1100px; /* ✅ Límite máximo en escritorio — MANTENIDO */
+  min-height: 330px;
+  padding: 20px;
+  margin: 10px auto 60px auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.image {
+  width: 410px;
+  height: 280px;
+  border-radius: 3px;
+  object-fit: cover;
+  margin-right: 30px;
+  flex-shrink: 0; /* ✅ Evita que se encoga la imagen */
+  max-width: 100%; /* ✅ En móviles, no supera el ancho del contenedor */
+  height: auto; /* ✅ Mantiene proporción natural */
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.labelNameRestaurant {
+  font-size: x-large;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.info-row svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: #666;
+}
+
+.numberPhone {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.numberPhone:hover {
+  color: rgb(255, 102, 0);
+  text-decoration: underline;
+  transform: scale(1.09);
+}
+
+.tag-container {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.info-row h5 {
+  font-weight: 400;
+  font-style: oblique;
+  font-size: medium;
+  color: rgb(96, 96, 96);
+  margin: 0;
+}
+
+.paragraph {
+  flex-grow: 1;
+  max-width: 100%; /* ✅ CAMBIO CLAVE: antes era 550px → ahora se adapta */
+  font-size: large;
+  font-style: oblique;
+  font-weight: 400;
+  color: rgb(96, 96, 96);
+  margin: 16px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: justify;
+}
+
+
+/* ===================== */
+/* ✅ ADAPTACIÓN MÓVIL — SIN TOCAR EL JSX */
+/* ===================== */
+@media (max-width: 768px) {
+  .boxPicture {
+    flex-direction: column; /* ✅ Cambia a vertical en móvil */
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    margin: 10px auto 40px auto;
+    gap: 16px;
+  }
+
+  .image {
+    width: 100%; /* ✅ Ocupa todo el ancho */
+    max-width: 300px;
+    height: auto;
+    margin-right: 0; /* ✅ Quita margen derecho */
+    margin-bottom: 16px; /* ✅ Espacio entre imagen y contenido */
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 16px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-row {
+    justify-content: center; /* Centra ícono + texto */
+    margin-bottom: 6px;
+  }
+
+  .info-row svg {
+    margin-right: 6px;
+  }
+
+  .labelNameRestaurant {
+    font-size: 1.5rem; /* Ajuste de tamaño para móvil */
+  }
+
+  .numberPhone,
+  .ubication,
+  .paragraph {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .tag-container {
+    justify-content: center;
+    margin-top: 12px;
+    gap: 6px;
+  }
+}

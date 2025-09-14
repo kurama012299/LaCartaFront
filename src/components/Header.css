@@ -55,6 +55,7 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-left: 120px;
 }
 .labelHeader {
   color: rgb(83, 83, 83);

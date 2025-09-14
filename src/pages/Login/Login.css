@@ -54,9 +54,7 @@
     font-size: x-large;
     color: white;
     font-weight: 700;
-    background: linear-gradient(135deg, white, #ffb880); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+    color: #ecd7c7;
 }
 .buttonInit{
     margin: 0 auto;
@@ -88,6 +86,7 @@
         box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
 }
 .InputUsername{
+    outline: none !important;
     background: rgb(255, 255, 255);
         border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -97,13 +96,18 @@
         border: 1px solid #f0f0f0;
 }
 .InputUsername:hover{
-    border-color: #ffb880 !important;
+      outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffb880;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
 }
-.InputUsername:focus{
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
-    border-width: 2px !important;
-    border-color: #ff6600 !important;
+.InputUsername:focus-visible,.InputUsername:focus-within,.InputUsername:focus{
+     outline: none;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(255, 102, 0);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
 }
 .InputPassword{
     background: rgb(255, 255, 255);
@@ -115,7 +119,18 @@
         border: 1px solid #f0f0f0;
 }
 .InputPassword:hover{
-    border-color: #ffb880;
+    outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffb880;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+.InputPassword:focus-visible,.InputPassword:focus-within,.InputPassword:focus{
+     outline: none;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(255, 102, 0);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
 }
 .labelLogin{
     align-items: center;
