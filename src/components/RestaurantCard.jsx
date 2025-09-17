@@ -5,25 +5,24 @@ import { MdOutlinePlace } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import StatusSwitch from "./css/StatusSwitch";
 import TagList from "./TagList";
+import { useNavigate } from "react-router-dom";
 
 const getImageUrl = (imagePath) => {
   if (!imagePath) return "https://via.placeholder.com/410x280";
 
-  // Normaliza por si vienen backslashes desde Windows
   const path = String(imagePath).replace(/\\/g, "/");
 
-  // Si ya es absoluta, úsala tal cual
   if (/^https?:\/\//i.test(path)) return path;
 
-  // Toma la base del backend de env (Vite o CRA)
   const base ="http://localhost:8080";
-
-  // Une base + path relativa del backend
+  
   return `${base}${path.startsWith("/") ? "" : "/"}${path}`;
 };
 
 export default function RestaurantCard({ restaurant, onEdit, onDelete }) {
   const { name, phoneNumber, municipalityName, description, restaurantTags = [], image, id } = restaurant;
+  
+
   const confirm = () => {
     onDelete(id);
   };

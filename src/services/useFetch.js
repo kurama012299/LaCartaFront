@@ -4,16 +4,32 @@ export function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [status, setStatus] = useState(null); // 👈 NUEVO: código HTTP
 
   const fetchData = useCallback(() => {
     const abortController = new AbortController();
     setLoading(true);
-    setError(null); // Limpiar error anterior
+    setError(null);
+    setStatus(null); // Limpiar estado anterior
 
     fetch(url, { signal: abortController.signal })
       .then((response) => {
+        setStatus(response.status); // 👈 Guardar el código HTTP
         if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          return response.text().then((text) => {
+            let parsed;
+            try {
+              parsed = text ? JSON.parse(text) : {};
+            } catch (e) {
+              parsed = { message: text || "Respuesta no válida" };
+            }
+
+            throw {
+              status: response.status,
+              message: parsed.message || response.statusText,
+              details: parsed,
+            };
+          });
         }
         return response.json();
       })
@@ -21,25 +37,49 @@ export function useFetch(url) {
         setData(data);
       })
       .catch((err) => {
-        // 👇 SOLO establece error si NO fue abortado
-        if (err.name !== "AbortError") {
-          setError(err);
+        if (err.name === "AbortError") return;
+
+        let errorPayload = {
+          code: null,
+          message: "Error desconocido",
+          details: null,
+        };
+
+        if (err.status) {
+          errorPayload = {
+            code: err.status,
+            message: err.message || "Error en la respuesta",
+            details: err.details,
+          };
+        } else {
+          errorPayload = {
+            code: null,
+            message: err.message || "Error de red",
+            details: null,
+          };
         }
-        // Si fue AbortError, lo ignoramos silenciosamente
+
+        setError(errorPayload);
+        setData(null);
       })
       .finally(() => {
         setLoading(false);
       });
 
-    // Cleanup: abortar si el componente se desmonta
     return () => {
       abortController.abort();
     };
   }, [url]);
 
   useEffect(() => {
-    return fetchData();
+    fetchData();
   }, [fetchData]);
 
-  return { data, loading, error, refetch: fetchData };
+  return {
+    data,
+    loading,
+    error, // Ahora es un objeto: { code, message, details }
+    status, // Código HTTP numérico (200, 404, 500, etc.)
+    refetch: fetchData,
+  };
 }

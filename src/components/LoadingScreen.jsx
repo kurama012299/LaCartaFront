@@ -22,14 +22,14 @@ const LoadingScreen = () => {
 
   return (
     <div className="loading-screen">
-      <span class="loader-6">
-            <div class="loading-content">
-              <div class="liquid"></div>
-              <div class="liquid"></div>
-              <div class="liquid"></div>
-              <div class="liquid"></div>
+      <span className="loader-6">
+            <div className="loading-content">
+              <div className="liquid"></div>
+              <div className="liquid"></div>
+              <div className="liquid"></div>
+              <div className="liquid"></div>
             </div>
-            <svg class="svg">
+            <svg className="svg">
               <filter id="gooey">
                 <feGaussianBlur
                   stdDeviation="10"

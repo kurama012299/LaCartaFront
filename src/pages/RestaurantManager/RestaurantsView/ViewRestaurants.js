@@ -28,7 +28,7 @@ const ViewRestaurants = () => {
 
   const handleEdit = (id) => {
     console.log("Editar restaurante con ID:", id);
-    navigate('/restaurants');
+    navigate(`/viewrestaurants/${id}`);
   };
 
   return (

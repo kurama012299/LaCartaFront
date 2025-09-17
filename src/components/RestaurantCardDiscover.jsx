@@ -3,6 +3,7 @@ import "./RestaurantCardDiscover.css";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlinePlace } from "react-icons/md";
 import TagList from "./TagList";
+import { useNavigate } from "react-router-dom";
 
 
 const getImageUrl = (imagePath) => {
@@ -22,12 +23,18 @@ const getImageUrl = (imagePath) => {
 };
 
 export default function RestaurantCardDiscover({ restaurant }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/discoverview/${restaurant.id}`);
+  };
+
   const { name, phoneNumber, municipalityName, description, restaurantTags = [], image, id } = restaurant;
 
   const imageUrl = getImageUrl(image);
 
   return (
-    <div className="boxPicture">
+    <div className="boxPicture" onClick={handleCardClick}>
       <img
         className="image"
         src={imageUrl || "https://via.placeholder.com/410x280"}

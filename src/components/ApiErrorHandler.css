@@ -1,0 +1,31 @@
+.full-screen-error {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff; /* Fondo blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Asegura que esté encima de todo */
+}
+
+.error-container {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Opcional: si quieres que el botón tenga hover */
+.full-screen-error .ant-btn-primary {
+  background-color: #ff6600 !important;
+  border-color: #ff6600 !important;
+}
+
+.full-screen-error .ant-btn-primary:hover,
+.full-screen-error .ant-btn-primary:focus {
+  background-color: #e55a00 !important;
+  border-color: #e55a00 !important;
+}

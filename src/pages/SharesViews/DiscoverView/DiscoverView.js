@@ -14,6 +14,7 @@ import RestaurantCardDiscover from "../../../components/RestaurantCardDiscover";
 import { useFetch } from "../../../services/useFetch";
 import { useState ,useEffect} from "react";
 import NoRestaurantIcon from "../../../assets/icons/icon-no-comida.png";
+import ApiErrorHandler from "../../../components/ApiErrorHandler";
 
 
 const DiscoverView = () => {
@@ -59,8 +60,8 @@ const DiscoverView = () => {
   
    const cuisines = [
     { name: "Italiana", icon: EspaghettiIcon ,id: 4},
-    { name: "Japonesa", icon: Sushi , id:0 },
-    { name: "Mexicana", icon: Tacos , id:1},
+    { name: "Japonesa", icon: Sushi , id:1},
+    { name: "Mexicana", icon: Tacos , id:8},
     { name: "Criolla", icon: MeatIcon , id:2},
     { name: "Americana", icon: AmericanIcon, id:5 },
     { name: "China", icon: ChineseIcon ,id:6},
@@ -68,19 +69,20 @@ const DiscoverView = () => {
   ];
 
  
-  const { data, loading, error } = useFetch(apiUrl);
+  const { data, loading, error,refetch } = useFetch(apiUrl);
+  
 
-   useEffect(() => {
-     if (data?.length === 0 && selectedCategory !== null) {
-       info();
-       setSelectedCategory(null)
-       
-     }
-   }, [data, selectedCategory]);
+  useEffect(() => {
+  if (loading || error) return;
+
+  if (data.length === 0 && selectedCategory !== null && data!=null) {
+    info();
+    setSelectedCategory(null);
+  }
+}, [data, selectedCategory, error]);
 
 
-    if (loading) return <div>Cargando restaurantes...</div>;
-    if (error) return <div>Error al cargar: {error.message}</div>;
+    
 
   
 
@@ -127,28 +129,38 @@ const DiscoverView = () => {
       </section>
       <section className="restaurants-section">
         <h2 className="restaurants-title">Todos los restaurantes</h2>
-        <p className="restaurants-subtitle">
-          {data?.length} restaurantes encontrados
-        </p>
-        {data?.length === 0 && selectedCategory !== null ? (
-          <div className="BoxiconNoRestaurant">
-            <img
-              src={NoRestaurantIcon}
-              style={{ width: "32px", height: "32px", alignContent: "center" }}
-            ></img>
-            <h2 style={{ textAlign: "center" }}>
-              Lo sentimos no hay restaurantes disponibles de la categoría
-              seleccionada
-            </h2>
-          </div>
-        ) : (
-          data?.map((restaurant) => (
-            <RestaurantCardDiscover
-              key={restaurant.id}
-              restaurant={restaurant}
-            />
-          ))
-        )}
+        <ApiErrorHandler error={error} onRetry={refetch}>
+          {loading ? (
+            <p>Cargando...</p>
+          ) : data?.length === 0 && selectedCategory !== null ? (
+            <div className="BoxiconNoRestaurant">
+              <img
+                src={NoRestaurantIcon}
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  alignContent: "center",
+                }}
+              />
+              <h2 style={{ textAlign: "center" }}>
+                Lo sentimos, no hay restaurantes disponibles de la categoría
+                seleccionada
+              </h2>
+            </div>
+          ) : (
+            <>
+              <p className="restaurants-subtitle">
+                {data?.length} restaurantes encontrados
+              </p>
+              {data?.map((restaurant) => (
+                <RestaurantCardDiscover
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                />
+              ))}
+            </>
+          )}
+        </ApiErrorHandler>
       </section>
     </div>
   );
