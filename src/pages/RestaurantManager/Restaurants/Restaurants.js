@@ -1,22 +1,17 @@
 import './Restaurants.css';
-import RestaurantMexican from"../../../assets/imgs/restaurant-mexican.png";
+import RestaurantMexican from "../../../assets/imgs/restaurant-mexican.png";
 import Header from "../../../components/Header";
-import { Input, Select, Button, Popconfirm} from "antd";
+import { Input, Select, Button } from "antd";
 import ButtonPopAsync from '../../../components/ButtonPopAsync';
 import SelectTag from '../../../components/SelectTag';
 import { HiOutlinePhotograph } from "react-icons/hi";
 import React, { useRef, useState } from 'react';
-import Tabss from '../../../components/Tabs';
-
-
+import { BiImport } from "react-icons/bi";
+import { BsQrCode } from "react-icons/bs";
 
 const { TextArea } = Input;
-const handleChange = (value: String)=> {
-    console.log('selected ${value}');
-};
 
-
-const Restaurants =()=>{
+const Restaurants = () => {
     const [imageSrc, setImageSrc] = useState(RestaurantMexican);
     const fileInputRef = useRef(null);
 
@@ -35,67 +30,104 @@ const Restaurants =()=>{
         }
     };
 
-    return(
-        <body >
-            <section className="bodyRestaurants">
-                <Header/>
-                <h1 className="labelTop">Configuración del restaurante</h1>
-                <h3 className="labelSubConfig">Actualiza la información de tu restaurante</h3>
+    return (
+        <div className="restaurants-container">
+            <Header />
+            <div className="page-header-left">
+            <h1 className="labelTop">Configuración del restaurante</h1>
+            <h3 className="labelSubConfig">Actualiza la información de tu restaurante</h3>
+        </div>
+            <div className="main-content">
+                 
+                {/* Columna izquierda */}
+                <div className="form-column">
+                    <div className="card-form">
+                        <h2 className="section-title">Información general</h2>
+                        <p className="section-subtitle">Datos básicos de tu restaurante</p>
 
-                <div className="boxInfo">
-                    <h3 className="labelInfo">Información general</h3>
-                    <h4 className="labelData">Datos básicos de tu restaurante</h4>
-                    <h3 className="labelName">Nombre del restaurante</h3>
-                    <Input className="inputName" placeholder="Ej: La Bella Italia" />
-                    <h3 className="labelDescription">Descripcion</h3>
-                    <TextArea className="inputDescription" showCount maxLength={100} placeholder="Ej:Auténtica cocina italiana con ingredientes frescos y recetas tradicionales" />
-                    <h3 className="labelType">Tipo de Cocina</h3>
-                    <Select onChange={handleChange} placeholder="Ej: Italiana" options={[{value: "Italiana", label:"Italiana"}]} className="selectType"></Select>
-                    <h3 className="labelPhone">Teléfono</h3>
-                    <Input className="inputPhone" placeholder="Ej: +53 58407752"></Input>
-                    <h3 className="labelAdress">Dirección</h3>
-                    <Input className="inputAdress" placeholder="Ej: Calle Línea e/ 20 y 22" />
-                    <ButtonPopAsync></ButtonPopAsync>
+                        <div className="form-group">
+                            <label>Nombre del restaurante</label>
+                            <Input placeholder="Ej: La Bella Italia" className="input-field" />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Descripción</label>
+                            <TextArea
+                                placeholder="Ej: Auténtica cocina italiana con ingredientes frescos y recetas tradicionales"
+                                rows={3}
+                                showCount
+                                maxLength={250}
+                                className="input-field"
+                            />
+                        </div>
+
+                        <div className="form-row">
+                            <div className="form-group half">
+                                <label>Tipo de Cocina</label>
+                                <Select
+                                    placeholder="Ej: Italiana"
+                                    options={[{ value: "Italiana", label: "Italiana" }]}
+                                    className="input-field"
+                                />
+                            </div>
+                            <div className="form-group half">
+                                <label>Teléfono</label>
+                                <Input placeholder="Ej: +53 58407752" className="input-field" />
+                            </div>
+                        </div>
+
+                        <div className="form-group">
+                            <label>Dirección</label>
+                            <Input placeholder="Ej: Calle Línea e/ 20 y 22" className="input-field" />
+                        </div>
+
+                        <ButtonPopAsync />
+                    </div>
                 </div>
 
-                <div className="boxPhoto">
-                    <h3 className="labelPhoto">Imagen del Restaurante</h3>
-                    <h4 className="labelMainPhoto">Foto principal de tu restaurante</h4>
-                    <img className="photo" src={imageSrc} alt="Restaurante" />
-                    <Button
-                        className="buttonChange"
-                        icon={<HiOutlinePhotograph />}
-                        size="large"
-                        type="primary"
-                        onClick={handleButtonClick}
-                    >
-                        Cambiar Imagen
-                    </Button>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        ref={fileInputRef}
-                        style={{ display: 'none' }}
-                        onChange={handleFileChange}
-                    />
+                {/* Columna derecha */}
+                <div className="sidebar-column">
+                    <div className="card-image">
+                        <h2 className="section-title">Imagen del Restaurante</h2>
+                        <p className="section-subtitle">Foto principal de tu restaurante</p>
+                        <img src={imageSrc} alt="Restaurante" className="photo" />
+                        <Button
+                            className="button-change"
+                            icon={<HiOutlinePhotograph />}
+                            onClick={handleButtonClick}
+                        >
+                            Cambiar Imagen
+                        </Button>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            ref={fileInputRef}
+                            style={{ display: 'none' }}
+                            onChange={handleFileChange}
+                        />
+                    </div>
+
+                    <div className="cards-bottom">
+                        <div className="card-tags">
+                            <h3 className="section-title">Etiquetas</h3>
+                            <SelectTag />
+                        </div>
+                        <div className="card-qr">
+                            <h3 className="section-title">QR del Restaurante</h3>
+                            <BsQrCode className="icon-qr" />
+                            <Button
+                                className="button-download"
+                                icon={<BiImport />}
+                                onClick={handleButtonClick}
+                            >
+                                Descargar QR
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div  className="boxType">
-                    <h3 className="labelTypeFood">Etiquetas</h3>
-                    <SelectTag></SelectTag>
-                </div>
-
-                
-               {/* <div className="boxMenu">
-                    <h3 className="labelMenu">Su Menú</h3>
-                    <Tabss></Tabss>
-
-                </div>*/}
-                
-
-            </section>
-            
-        </body>
+            </div>
+        </div>
     );
-}
+};
+
 export default Restaurants;
