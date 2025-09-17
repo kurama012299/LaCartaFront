@@ -9,6 +9,8 @@ import React, { useRef, useState } from 'react';
 import { BiImport } from "react-icons/bi";
 import { BsQrCode } from "react-icons/bs";
 
+
+
 const { TextArea } = Input;
 
 const Restaurants = () => {
@@ -34,9 +36,9 @@ const Restaurants = () => {
         <div className="restaurants-container">
             <Header />
             <div className="page-header-left">
-            <h1 className="labelTop">Configuración del restaurante</h1>
-            <h3 className="labelSubConfig">Actualiza la información de tu restaurante</h3>
-        </div>
+                 <h1 className="labelTop">Configuración del restaurante</h1>
+                 <h3 className="labelSubConfig">Actualiza la información de tu restaurante</h3>
+            </div>
             <div className="main-content">
                  
                 {/* Columna izquierda */}
@@ -124,6 +126,20 @@ const Restaurants = () => {
                             </Button>
                         </div>
                     </div>
+                    
+                </div>
+                <div className="card-dishes">
+                         <h3 className="labelDishes">Platos de su Restaurante</h3>
+                        <div className="card-dish">
+                            <image className="imageDish"></image>
+                            <div className="card-info">
+                                <h3 className="labelname-dish">Spaghetti Carbonara</h3>
+                                <h3 className="labelprice-dish">€14.90</h3>
+                                <h3 className="labeldescription-dish">Pasta cremosa con huevo, queso parmesano, panceta crujiente y pimienta negra, especialidad de la casa.</h3>
+
+                            </div>
+                        </div>
+                        
                 </div>
             </div>
         </div>
