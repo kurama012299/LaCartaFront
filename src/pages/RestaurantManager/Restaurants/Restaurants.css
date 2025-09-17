@@ -25,9 +25,9 @@
     line-height: 1.4;
 }
 .restaurants-container {
-    background-color: #f5f2ed; /* Beige claro como en la imagen */
+    background-color: #f5f2ed; 
     padding: 20px;
-    min-height: 100vh;
+    min-height: 200vh;
 }
 
 .main-content {
@@ -215,6 +215,77 @@
     box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
 }
 
+/* ===== CARD DISHES ===== */
+.card-dishes {
+    margin: 2rem 1rem 0 1.5rem clamp(1rem, 8vw, 5.9rem);
+    padding-left: 0;
+    max-width: 800px;
+    width: 100%;
+    
+    box-sizing: border-box;
+    text-align: left;
+    background-color: rgba(128, 128, 128, 0);
+    
+    
+}
+.labelDishes {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: -0.5rem;
+    margin-top: 1.5rem;
+    line-height: 3.2;
+    text-align: left !important;
+    max-width: 600px;
+    width: 100%;
+    white-space: nowrap;
+    margin-left: 0;
+
+       
+    
+}
+.card-dish{
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    text-align: center;
+    height: 50vh;
+    margin: 0 auto;
+
+}
+
+.imageDish{
+    width: 100%;
+    max-width: 180px;
+    max-height: 150px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    display: block;
+    box-shadow: #333 0px 3px 8px;
+}
+.card-info {
+    text-align: left;
+    margin-left: 2rem;
+    margin-bottom: 220rem;
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.labelname-dish {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1024px) {
     /* .page-header-left {
@@ -239,6 +310,7 @@
     .page-header-left {
         max-width: 100%;
     }
+    
     .labelTop {
         font-size: 1.5rem;
     }
@@ -299,6 +371,18 @@
     .labelSubConfig {
         font-size: 1rem;
     }
+
+    .card-dishes{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .labelDishes {
+        font-size: 1.5rem;
+        
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -357,6 +441,11 @@
     }
 
     .page-header-left {
+        margin-left: 0.5rem;
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .card-dishes {
         margin-left: 0.5rem;
         margin-right: 0;
         max-width: 100%;
