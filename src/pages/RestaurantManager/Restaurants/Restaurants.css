@@ -1,327 +1,366 @@
-.bodyRestaurants {
-  background-color: rgb(247, 240, 235) !important;
-  height: 1000px;
+/* ===== BASE Y RESET ===== */
+.page-header-left {
+    margin: 2rem 0 1.5rem clamp(1rem, 6vw, 5.9rem);
+    padding-left: 0;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
 }
-
 
 .labelTop {
-  position: relative;
-  left: 170px;
-  margin-bottom: 10px;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: -0.5rem;
+    margin-top: 1.5rem;
+    line-height: 3.2;
 }
-
 .labelSubConfig {
-  font-size: large;
-  max-width: 700px;
-  text-align: center;
-  margin: 0 auto;
-  font-style: oblique;
-  font-weight: 400;
-  margin-bottom: 3rem;
-  color: rgb(96, 96, 96);
-  position: relative;
-  right: 290px;
+    font-size: 1.1rem;
+    font-style: oblique;
+    font-weight: 400;
+    color: rgb(96, 96, 96);
+    margin: 0;
+    line-height: 1.4;
+}
+.restaurants-container {
+    background-color: #f5f2ed; /* Beige claro como en la imagen */
+    padding: 20px;
+    min-height: 100vh;
 }
 
-.boxInfo {
-  height: 500px;
-  width: 600px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  border: 1px solid #f0f0f0;
-  position: relative;
-  left: 170px;
-  bottom: 10px;
+.main-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.labelInfo {
-  font-weight: 500;
-  position: relative;
-  left: 25px;
-  margin-bottom: 10px;
-  font-size: large;
-  font-weight: 700;
+/* ===== COLUMNAS ===== */
+.form-column {
+    flex: 1;
+    min-width: 300px;
 }
 
-.labelData {
-  font-size: smaller;
-  max-width: 700px;
-  text-align: center;
-  margin: 0 auto;
-  font-weight: 400;
-  margin-bottom: default;
-  color: rgb(96, 96, 96);
-  position: relative;
-  right: 182px;
-  margin-bottom: 30px;
+.sidebar-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.labelName {
-  font-weight: 500;
-  position: relative;
-  left: 27px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-.labelDescription {
-  font-weight: 500;
-  position: relative;
-  left: 27px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.inputName {
-  width: 560px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  left: 20px;
+/* ===== CARD FORMULARIO ===== */
+.card-form {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 550px;
+    max-height: 580px;
+    height: 100%;
+    width: 100%;
 }
 
-.inputName:hover {
-  border-color: rgb(255, 102, 0);
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
+    color: #333;
 }
 
-.inputName:focus {
-  outline: none;
-  border-style: solid;
-  border-width: 3px;
-  border-color: rgb(255, 102, 0);
-  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+.section-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
-
-
-.inputDescription {
-  width: 560px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-  position: relative;
-  left: 20px;
+/* ===== FORMULARIO ===== */
+.form-group {
+    margin-bottom: 1.2rem;
 }
 
-.inputDescription:hover {
-  border-color: rgb(255, 102, 0) !important;
-  
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.inputDescription:focus {
-  outline: none;
-  border-style: solid;
-  border-color: rgb(255, 102, 0) !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2) !important;
-  
+.input-field {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
 
-.labelType{
-  font-weight: 500;
-  position: relative;
-  left: 27px;
-  margin-bottom: 10px;
-  font-size: 1rem;
+.input-field:hover,
+.input-field:focus {
+    border-color: #FF8C00;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+    outline: none;
 }
 
-.selectType{
-  width: 275px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  left: 20px;
-  border-radius: 6px;
-  border-color: white;
+/* ===== FILA DE DOS COLUMNAS ===== */
+.form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.selectType:hover{
-  border-color: rgb(255, 102, 0) !important;
-  border: 1px solid #f0f0f0;
-  border-color: white;
-
+.form-group.half {
+    flex: 1;
+    min-width: 200px;
 }
 
-.labelPhone{
-  font-weight: 500;
-  position: relative;
-  left: 320px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  bottom: 76px;
-}
-.inputPhone{
-  width: 275px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  left: 310px;
-  bottom: 80px;
-
+/* ===== CARD IMAGEN ===== */
+.card-image {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+    margin: 0 auto;
 }
 
-.inputPhone:hover {
-  border-color: rgb(255, 102, 0);
+.photo {
+    width: 100%;
+    max-width: 400px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.inputPhone:focus {
-  outline: none;
-  border-style: solid;
-  border-width: 3px;
-  border-color: rgb(255, 102, 0);
-  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+.button-change {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
 }
 
-.labelAdress {
-  font-weight: 500;
-  position: relative;
-  left: 27px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  bottom: 80px;
-}
-
-.inputAdress {
-  width: 560px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-  left: 20px;
-  bottom: 80px;
-}
-
-.boxPhoto{
-  height: 350px;
-  width: 300px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  border: 1px solid #f0f0f0;
-  position: relative;
-  left: 800px;
-  bottom: 532px;
-
-
-}
-
-.labelPhoto{
-  font-weight: 500;
-  position: relative;
-  left: 25px;
-  margin-bottom: 10px;
-  font-size: large;
-  font-weight: 700;
-  
-  
-}
-
-.labelMainPhoto{
-  font-size: smaller;
-  max-width: 700px;
-  text-align: center;
-  margin: 0 auto;
-  font-weight: 400;
-  margin-bottom: default;
-  color: rgb(96, 96, 96);
-  position: relative;
-  right: 32px;
-  
-}
-
-.photo{
-  margin-top: 20px;
-  border-radius: 10px;
-  width: 250px;
-  height: 180px;
-  position: relative;
-  left: 24px;
-}
-
-.buttonChange{
-  background-color: transparent !important;
-  border-radius: 10px;
-  color: black !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  width: 250px;
-  height: 40px;
-  background: white;
-  border: 4px;
-  position: relative;
-  left: 20px;
-  margin-top: 13px;
-
-}
-
-.buttonChange:hover{
-    color: white !important;
-    background-color: rgb(255, 102, 0) !important;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background: linear-gradient(135deg, rgb(255, 102, 0), rgb(255, 180, 120)) !important;
+.button-change:hover {
+    background: #FF8C00;
+    color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3) !important;
-    cursor: pointer;
-    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+/* ===== CARD TAGS Y QR ===== */
+.cards-bottom {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-tags,
+.card-qr {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.icon-qr {
+    width: 80px;
+    height: 80px;
+    margin: 1rem auto;
+    display: block;
+}
+
+.button-download {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.button-download:hover {
+    background: #FF8C00;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+    /* .page-header-left {
+        margin-left: 0;
+        max-width: 100%;
+    } */
+    .card-form,
+    .card-image {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* .page-header-left {
+        margin: 1.5rem 0 1rem 0;
+        padding-left: 0;
+        max-width: 100%;
+    } */
+    .page-header-left {
+        max-width: 100%;
+    }
+    .labelTop {
+        font-size: 1.5rem;
+    }
+    .labelSubConfig {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-column,
+    .sidebar-column {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .cards-bottom {
+        flex-direction: column;
+    }
+
+    .card-tags,
+    .card-qr {
+        min-width: 100%;
+    }
+
+    .photo {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .button-change,
+    .button-download {
+        max-width: 100%;
+    }
+
+    .card-form {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .input-field,
+    .button-change,
+    .button-download,
+    .ant-select,
+    .ant-select-selector {
+        font-size: 0.95rem;
+        padding: 0.5rem !important;
+    }
+    .section-title,
+    .section-subtitle,
+    .labelTop,
+    .labelSubConfig {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurants-container {
+        padding: 10px;
+    }
+
+    .card-form,
+    .card-image,
+    .card-qr,
+    .card-tags {
+        padding: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .labelTop {
+        font-size: 0.9rem;
+        margin-top: 3.5rem;
+        
+    }
+    .section-title {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        margin-bottom: -0.5rem;
+    }
     
+
+    .section-subtitle,
+    .labelSubConfig {
+        font-size: 0.8rem;
+    }
+
+    .photo {
+        height: 90px;
+        max-width: 100%;
+    }
+
+    .input-field,
+    .button-change,
+    .button-download,
+    .ant-select,
+    .ant-select-selector {
+        font-size: 0.75rem !important;
+        padding: 0.25rem !important;
+        min-height: 28px !important;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    .form-group.half {
+        min-width: 100%;
+    }
+
+    .page-header-left {
+        margin-left: 0.5rem;
+        margin-right: 0;
+        max-width: 100%;
+    }
 }
-
-.boxType{
-  height: 130px;
-  width: 300px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  border: 1px solid #f0f0f0;
-  position: relative;
-  left: 800px;
-  bottom: 532px;
-
-}
-
-.labelTypeFood{
-  font-weight: 500;
-  position: relative;
-  left: 25px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-size: large;
-  font-weight: 700;
-
-}
-
-.boxMenu{
-  height: 350px;
-  width: 938px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  margin-top: 100px;
-  border: 1px solid #f0f0f0;
-  position: relative;
-  left: 165px;
-  bottom: 532px;
-
-}
-
-.labelMenu{
-  
-
-}
-
 
 /*# sourceMappingURL=Restaurants.css.map */
