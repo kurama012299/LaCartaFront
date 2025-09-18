@@ -1,7 +1,7 @@
 import "./Restaurants.css";
 import RestaurantMexican from "../../../assets/imgs/restaurant-mexican.png";
 import Header from "../../../components/Header";
-import { Input, Select, Button } from "antd";
+import { Input, Select, Button ,Modal} from "antd";
 import ButtonPopAsync from "../../../components/ButtonPopAsync";
 import SelectTag from "../../../components/SelectTag";
 import { HiOutlinePhotograph } from "react-icons/hi";
@@ -11,6 +11,7 @@ import { BsQrCode } from "react-icons/bs";
 import { useFetch } from "../../../services/useFetch";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import  useForm  from "../../../hooks/useForm";
 
 const getImageUrl = (imagePath) => {
   if (!imagePath) return "https://via.placeholder.com/410x280";
@@ -26,17 +27,113 @@ const getImageUrl = (imagePath) => {
 
 const { TextArea } = Input;
 
+
+
+
 const Restaurants = () => {
   const [imageSrc, setImageSrc] = useState(RestaurantMexican);
   const fileInputRef = useRef(null);
   const { id } = useParams();
+  const [errorsname, setErrorsName] = useState({});
+
+ 
+
+      
 
   const url = `http://localhost:8080/restaurants/${id}`;
 
   const { data: restaurant, loading, error, refetch } = useFetch(url);
   const image = restaurant?.image;
 
+  
   const restaurantId=restaurant?.id;
+  const restaurantName=restaurant?.name;
+
+  const initialValue={
+  name: restaurantName,
+  description:"",
+  phoneNumber:"",
+  municipalityName:"",
+  cuisineType: null
+}
+
+      
+
+      const validateValue = (form)=>{
+        let errors = {};
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let direccionRegex =
+          /^(?! )(?!.*\s{2})(?!.*[*!@#$%^&+=<>?;:`~|\\])[a-zA-Z0-9ÑñÁÉÍÓÚÜáéíóúü.,#\-()\s]{1,50}(?<! )$/;
+        let nombreRegex =
+          /^(?=.{1,20}$)[a-zA-ZÀ-ÿ\u00f1\u00d1]+(?: [a-zA-ZÀ-ÿ\u00f1\u00d1]+)*$/;
+        let descripcionRegex =
+          /^(?! )(?!.*\d)[a-zA-ZÀ-ÿ\u00f1\u00d1\s.,!?;:()\-'"¡¿\n]{1,300}(?<! )$/;
+        let phoneRegex = /^\d{8}$/;
+
+        if (!form.name.trim()) {
+          errors.name = "El campo 'Nombre del restaurante' es requerido";
+        } else if (!nombreRegex.test(form.name.trim())) {
+          errors.name =
+            "El campo 'Nombre del restaurante no debe exceder 20 letras, solo acepta letras, espacios en blanco, y un solo espacio entre letras '";
+        }
+        if (!form.description.trim()) {
+          errors.description = "El campo 'Descripcion' es requerido";
+        } else if (!descripcionRegex.test(form.description.trim())) {
+          errors.description =
+            "El campo 'Descripcion' solo acepta letras, espacios en blanco, y un solo espacio entre letras,máximo de letras 300 ";
+        }
+        if (!form.municipalityName.trim()) {
+          errors.direction = "El campo 'Direccion' es requerido";
+        } else if (!direccionRegex.test(form.municipalityName.trim())) {
+          errors.direction =
+            "El campo 'Direccion' solo acepta letras, espacios en blanco, y un solo espacio entre letras ,máximo de letras 50";
+        }
+        if (!form.phoneNumber.trim()) {
+          errors.phoneNumber = "El campo 'Telefono' es requerido";
+        } else if (!phoneRegex.test(form.phoneNumber.trim())) {
+          errors.phoneNumber =
+            "El campo 'Telefono' es requerido solo acepta 8 numeros validos";
+        }
+        if (form.cuisineType == null || !form.cuisineType.trim()) {
+          errors.cuisineType = "El campo 'Tipo de Cocina' es requerido";
+          console.log("pepe"+form.cuisineType);
+        }
+         console.log("Errores generados:", errors);
+
+        return errors;
+      }
+
+       const {form, 
+        setForm,
+    loadingName,
+    errors,
+    response,
+     handleChangeName,
+     handleBlur,
+      handleSubmit}=useForm(initialValue,validateValue);
+
+      useEffect(() => {
+  if (restaurant) {
+    setForm({
+      name: restaurant?.name || "",
+      description: restaurant?.description || "",
+      phoneNumber: restaurant?.phoneNumber || "",
+      municipalityName: restaurant?.municipalityName || "",
+      cuisineType: restaurant?.cuisineType || "" 
+    });
+  }
+}, [restaurant, setForm]);
+
+       const handleSave = async () => {
+         await new Promise((resolve) => setTimeout(resolve, 1000));
+         console.log("Guardado con éxito:", form);
+       };
+
+      const handleSubmitForm = () => {
+      const newErrors = validateValue();
+      setErrorsName(newErrors);
+      };
+
 
   const imageUrl = getImageUrl(image);
 
@@ -68,12 +165,7 @@ const Restaurants = () => {
   const foundCuisine = cuisines.find((c) => c.name === restaurant?.cuisineType);
   const initialId = foundCuisine ? foundCuisine.id : null;
 
-  useEffect(() => {
-    if (restaurant?.cuisineType) {
-      const found = cuisines.find((c) => c.name === restaurant.cuisineType);
-      setSelectedCuisine(found ? found.id : null);
-    }
-  }, [restaurant?.cuisineType]);
+
 
    const [selectedTags, setSelectedTags] = useState([]);
 
@@ -83,15 +175,7 @@ const Restaurants = () => {
   };
 
 
-  const [selectedCuisine, setSelectedCuisine] = useState(initialId);
-  const handleChange = (value) => {
-    setSelectedCuisine(value);
-    console.log("ID seleccionado:", value);
-    // Si necesitas el nombre:
-    const selected = cuisines.find((c) => c.id === value);
-    console.log("Nombre:", selected?.name);
-  };
-
+  
   return (
     <div className="restaurants-container">
       <Header />
@@ -110,33 +194,52 @@ const Restaurants = () => {
 
             <div className="form-group">
               <label>Nombre de tu restaurante</label>
-              <Input className="input-field" value={restaurant?.name} />
+              <Input
+                className="input-field"
+                type="text"
+                name="name"
+                value={form?.name}
+                onChange={handleChangeName}
+                onBlur={handleBlur}
+                required
+              />
             </div>
 
             <div className="form-group">
               <label>Descripción</label>
               <TextArea
+                name="description"
                 placeholder="Ej: Auténtica cocina italiana con ingredientes frescos y recetas tradicionales"
                 rows={3}
                 showCount
                 maxLength={400}
                 className="input-field"
-                value={restaurant?.description}
+                value={form?.description}
+                onChange={handleChangeName}
+                onBlur={handleBlur}
               />
             </div>
 
             <div className="form-row">
               <div className="form-group half">
                 <label>Tipo de Cocina</label>
-                <Select
+                <Select 
+                  name="cuisineType"
                   placeholder="Ej: Italiana"
                   className="input-field"
-                  value={selectedCuisine}
-                  onChange={(value) => setSelectedCuisine(value)}
+                  value={form?.cuisineType} 
+                  onSelect={(value) => {
+                    handleChangeName({
+                      target: {
+                        name: "cuisineType",
+                        value: value,
+                      },
+                    });
+                  }}
                 >
                   <option value="">-- Selecciona --</option>
                   {cuisines.map((cuisine) => (
-                    <option key={cuisine.id} value={cuisine.id}>
+                    <option key={cuisine.id} value={cuisine.name}>
                       {cuisine.name}
                     </option>
                   ))}
@@ -144,22 +247,22 @@ const Restaurants = () => {
               </div>
               <div className="form-group half">
                 <label>Teléfono</label>
-                <Input
-                  value={restaurant?.phoneNumber}
-                  className="input-field"
-                />
+                <Input name="phoneNumber" value={form?.phoneNumber} className="input-field"   onChange={handleChangeName}
+                onBlur={handleBlur} />
               </div>
             </div>
 
             <div className="form-group">
               <label>Dirección</label>
-              <Input
-                value={restaurant?.municipalityName}
-                className="input-field"
-              />
+              <Input name="municipalityName"   onChange={handleChangeName}
+                onBlur={handleBlur} value={form?.municipalityName} className="input-field" />
             </div>
 
-            <ButtonPopAsync />
+            <ButtonPopAsync
+              errors={errors}
+              onClick={handleSubmitForm}
+              onConfirm={handleSave}
+            />
           </div>
         </div>
 
@@ -189,7 +292,7 @@ const Restaurants = () => {
             <div className="card-tags">
               <h3 className="section-title">Etiquetas</h3>
               <SelectTag
-                restaurantId={restaurantId} 
+                restaurantId={restaurantId}
                 onChange={handleTagsChange}
               />
             </div>
